@@ -11,6 +11,7 @@ import EducationPage from './pages/EducationPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import ResumePage from './pages/ResumePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="services" element={<ServicesPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="resume" element={<ResumePage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </AppProvider>

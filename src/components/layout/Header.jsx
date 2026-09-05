@@ -41,7 +41,7 @@ export default function Header({ setMobileOpen }) {
   const currentNav = PORTFOLIO_DATA.navigation.find(
     (nav) => nav.path === location.pathname
   );
-  const pageTitle = currentNav?.label ?? 'Overview';
+  const pageTitle = currentNav?.label ?? '404';
 
   return (
     <header className="sticky top-0 z-20 h-16 border-b border-line bg-sidebar/90 backdrop-blur-md flex items-center justify-between px-4 md:px-6 no-print">
