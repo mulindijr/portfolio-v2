@@ -1,0 +1,58 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --app-bg: #ffffff;
+  --app-sidebar: #f9f9f9;
+  --app-surface: #f1f1f1;
+  --app-hover: #f5f5f5;
+  --app-elevated: #ffffff;
+  --app-ink: #0d0d0d;
+  --app-ink-secondary: #666666;
+  --app-ink-muted: #8f8f8f;
+  --app-title: #2563eb;
+  --app-border: rgba(0, 0, 0, 0.08);
+  --app-cta: #000000;
+  --app-cta-ink: #ffffff;
+  --app-overlay: rgba(13, 13, 13, 0.45);
+  --app-success: #3d7a55;
+  --app-danger: #b42318;
+}
+
+.dark {
+  --app-bg: #212121;
+  --app-sidebar: #171717;
+  --app-surface: #2a2a2a;
+  --app-hover: #2f2f2f;
+  --app-elevated: #171717;
+  --app-ink: #ffffff;
+  --app-ink-secondary: #b8b8b8;
+  --app-ink-muted: #808080;
+  --app-title: #7eb6ff;
+  --app-border: #404040;
+  --app-cta: #ffffff;
+  --app-cta-ink: #000000;
+  --app-overlay: rgba(0, 0, 0, 0.65);
+  --app-success: #7eb892;
+  --app-danger: #e07070;
+}
+
+@theme inline {
+  --font-sans:
+    'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --color-app: var(--app-bg);
+  --color-sidebar: var(--app-sidebar);
+  --color-surface: var(--app-surface);
+  --color-hover: var(--app-hover);
+  --color-elevated: var(--app-elevated);
+  --color-ink: var(--app-ink);
+  --color-ink-secondary: var(--app-ink-secondary);
+  --color-ink-muted: var(--app-ink-muted);
+  --color-title: var(--app-title);
+  --color-line: var(--app-border);
+  --color-cta: var(--app-cta);
+  --color-cta-ink: var(--app-cta-ink);
+  --color-overlay: var(--app-overlay);
+  --color-success: var(--app-success);
+  --color-danger: var(--app-danger);
+}

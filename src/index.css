@@ -1,13 +1,95 @@
 @import 'tailwindcss';
+@import './styles/theme.css';
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    @apply bg-sidebar text-ink antialiased;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--app-ink) 14%, transparent);
+    color: var(--app-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--app-ink);
+    outline-offset: 2px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--app-title);
+  }
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+@layer components {
+  .glass-panel {
+    background: var(--app-surface);
+    border: 1px solid var(--app-border);
+  }
+
+  .filter-chip {
+    @apply px-3 py-1.5 rounded-full text-xs font-medium border border-line bg-app text-ink-secondary transition-colors hover:bg-hover hover:text-ink;
+  }
+
+  .filter-chip-active {
+    @apply bg-cta text-cta-ink border-cta hover:bg-cta hover:text-cta-ink;
+  }
+
+  .kicker {
+    @apply flex items-center gap-2 text-ink-muted font-mono text-xs font-semibold uppercase tracking-wider;
+  }
+
+  .quiet-link {
+    @apply text-ink-secondary hover:text-ink underline-offset-2 hover:underline;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--app-ink) 18%, transparent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--app-ink) 32%, transparent);
+}
+
+@media print {
+  aside,
+  header,
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  body,
+  .glass-panel {
+    background: white !important;
+    color: #0d0d0d !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
 }
