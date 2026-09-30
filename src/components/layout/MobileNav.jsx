@@ -99,10 +99,10 @@ export default function MobileNav({ open, setOpen }) {
                     end={item.path === '/'}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                      `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm transition-colors ${
                         isActive
-                          ? 'bg-hover text-ink font-semibold'
-                          : 'text-ink-secondary hover:text-ink hover:bg-hover'
+                          ? 'bg-hover text-title font-semibold'
+                          : 'text-title/80 hover:text-title hover:bg-hover font-medium'
                       }`
                     }
                   >

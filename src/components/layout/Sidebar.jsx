@@ -107,10 +107,10 @@ export default function Sidebar({ collapsed, setCollapsed }) {
               onMouseEnter={(event) => showTip(item.label, event)}
               onMouseLeave={hideTip}
               className={({ isActive }) =>
-                `flex items-center gap-3 py-2.5 lg:py-3 rounded-xl text-sm lg:text-base font-medium transition-colors duration-200 ${
+                `flex items-center gap-3 py-2.5 lg:py-3 rounded-xl text-sm lg:text-base transition-colors duration-200 ${
                   isActive
-                    ? 'bg-hover text-ink font-semibold'
-                    : 'text-ink-secondary hover:text-ink hover:bg-hover'
+                    ? 'bg-hover text-title font-semibold'
+                    : 'text-title/80 hover:text-title hover:bg-hover font-medium'
                 } ${collapsed ? 'justify-center px-0' : 'px-3.5'}`
               }
             >
