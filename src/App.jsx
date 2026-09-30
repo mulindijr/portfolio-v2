@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { AppProvider } from './context/AppContext';
+import ScrollToTop from './components/common/ScrollToTop';
 import DashboardLayout from './components/layout/DashboardLayout';
 import OverviewPage from './pages/OverviewPage';
 import AboutPage from './pages/AboutPage';
@@ -17,6 +18,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppProvider>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
             <Route index element={<OverviewPage />} />
