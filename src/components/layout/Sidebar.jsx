@@ -53,15 +53,23 @@ export default function Sidebar({ collapsed, setCollapsed }) {
 
   return (
     <aside
-      className={`hidden md:flex flex-col min-h-0 overflow-x-hidden fixed top-0 left-0 bottom-0 z-30 transition-all duration-300 ease-in-out border-r border-line bg-sidebar no-print ${
+      className={`hidden md:flex flex-col min-h-0 fixed top-0 left-0 bottom-0 z-30 transition-all duration-300 ease-in-out border-r border-line bg-sidebar no-print ${
         collapsed ? 'w-20' : 'w-64'
       }`}
     >
+      <button
+        type="button"
+        onClick={() => setCollapsed(!collapsed)}
+        className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 z-40 w-7 h-7 rounded-full bg-surface border border-line text-ink-secondary hover:text-ink hover:bg-hover flex items-center justify-center shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cta cursor-pointer"
+        title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+        aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+      >
+        {collapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+      </button>
+
       <div
-        className={`flex-shrink-0 p-4 border-b border-line flex ${
-          collapsed
-            ? 'flex-col items-center gap-2'
-            : 'items-center justify-between'
+        className={`flex-shrink-0 p-4 border-b border-line flex items-center ${
+          collapsed ? 'justify-center' : 'justify-start'
         }`}
       >
         <div
@@ -82,16 +90,6 @@ export default function Sidebar({ collapsed, setCollapsed }) {
             </div>
           )}
         </div>
-
-        <button
-          type="button"
-          onClick={() => setCollapsed(!collapsed)}
-          className="p-1.5 rounded-lg text-ink-muted hover:text-ink hover:bg-hover transition-colors"
-          title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        >
-          {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
-        </button>
       </div>
 
       <nav
